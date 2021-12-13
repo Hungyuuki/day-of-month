@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dayofmonth</title>
+</head>
+<body>
+<input type="number" id="month" min="1" placeholder="Nhập tháng">
+<input type="button" id="run" value="Tính ngày" onclick="run()">
+<br>
+<textarea id="message" placeholder="Kết quả là"></textarea>
+
+<script>
+    function run() {
+        let month = document.getElementById('month').value;
+        switch (month) {
+            case '1':
+            case '3':
+            case '5':
+            case '7':
+            case '8':
+            case '10':
+            case '12':
+                message = 'Tháng ' + month + ' có 31 ngày';
+                break;
+            case '4':
+            case '6':
+            case '9':
+            case '11':
+                message = 'Tháng ' + month + ' có 30 ngày';
+                break;
+            case '2':
+                message = 'Tháng ' + month + ' có 29 hoặc 30 ngày';
+                break;
+            default:
+                message = month + ' không phải là một tháng trong năm';
+                break;
+    }
+        document.getElementById('message').innerHTML = message;
+    }
+</script>
+</body>
+</html>
